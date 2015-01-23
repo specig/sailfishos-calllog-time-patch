@@ -1,0 +1,8 @@
+{
+    "name": "CallLog timedisplay",
+    "description": "Displays time in yesterday and older timestamps.",
+    "category": "phone",
+    "infos": {
+        "maintainer": "muppis"
+    }
+}

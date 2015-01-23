@@ -1,0 +1,12 @@
+--- a/usr/share/voicecall-ui-jolla/pages/calllog/CallLogItem.qml	2014-12-26 15:34:17.290941258 +0200
++++ b/usr/share/voicecall-ui-jolla/pages/calllog/CallLogItem.qml	2014-12-26 17:25:04.019595425 +0200
+@@ -85,8 +85,7 @@
+         Label {
+             id: timeStampLabel
+             // JS comma operator used to ensure relative timestamp is updated whenever Qt.application.active changes
+-            text: { Qt.application.active, Format.formatDate(time, Formatter.TimepointRelativeCurrentDay) }
++            text: { Qt.application.active, time.getDate() === new Date().getDate() ? Format.formatDate(time, Formatter.TimepointRelativeCurrentDay) : (Format.formatDate(time, Formatter.TimepointRelativeCurrentDay) + " "+ Format.formatDate(time, Formatter.TimeValueTwentyFourHours)) }
+             font.pixelSize: Theme.fontSizeExtraSmall
+             anchors.right: parent.right
+             anchors.baseline: parent.baseline
+             color: highlighted ? Theme.highlightColor : primaryColor
